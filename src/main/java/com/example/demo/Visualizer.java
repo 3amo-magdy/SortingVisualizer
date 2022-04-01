@@ -218,16 +218,20 @@ public class Visualizer extends Application {
             int height = (snaps.get(index).get(i)*Height/maxHeight);
             if(height>0){
                 rectangles.get(i).setY(Height-height);
+                rectangles.get(i).setFill(Color.rgb(height*250/Height,88,88));
             }
             else{
                 rectangles.get(i).setY(Height);
+                rectangles.get(i).setFill(Color.rgb(255+height*250/Height,200,0));
             }
             rectangles.get(i).setHeight(Math.abs(height));
-            rectangles.get(i).setFill(Color.CYAN);
 
         }
         for (int i = 0; i < specials.get(index).size(); i++) {
             rectangles.get(specials.get(index).get(i)).setFill(Color.RED);
+            if(i>0){
+                rectangles.get(specials.get(index).get(i)).setFill(Color.GREY);
+            }
         }
         return true;
     }
