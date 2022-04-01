@@ -69,7 +69,7 @@ public class MergeSort <T extends Comparable<T>> implements ISort<T>{
             var sp = new ArrayList<Integer>();
             sp.add(rp);
             sp.add(lp);
-            snapper.snap(collection,sp);
+            snapper.snap((ArrayList<T>) collection.clone(),sp);
             int max;
             if(collection.get(rp).compareTo(collection.get(lp))>=0) {
                 max=rp;
@@ -93,7 +93,7 @@ public class MergeSort <T extends Comparable<T>> implements ISort<T>{
             var sp = new ArrayList<Integer>();
             sp.add(low);
             sp.add(high);
-            snapper.snap(collection,sp);
+            snapper.snap((ArrayList<T>) collection.clone(),sp);
         }
     }
 }

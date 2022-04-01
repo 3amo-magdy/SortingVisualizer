@@ -70,7 +70,7 @@ public class QuickSort<T extends Comparable<T>> implements ISort<T> {
                 var sp = new ArrayList<Integer>();
                 sp.add(left);
                 sp.add(right);
-                snapper.snap(collection,sp);
+                snapper.snap((ArrayList<T>) collection.clone(),sp);
                 right--;
             }
         }
@@ -78,7 +78,7 @@ public class QuickSort<T extends Comparable<T>> implements ISort<T> {
         var sp = new ArrayList<Integer>();
         sp.add(low);
         sp.add(right);
-        snapper.snap(collection,sp);
+        snapper.snap((ArrayList<T>) collection.clone(),sp);
         return right;
     }
 
