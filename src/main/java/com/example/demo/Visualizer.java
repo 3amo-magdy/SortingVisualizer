@@ -17,7 +17,7 @@ import java.util.concurrent.atomic.AtomicBoolean;
 import java.util.concurrent.atomic.AtomicReference;
 
 public class Visualizer extends Application {
-    int SIZE = 10;                  //number of elements
+    int SIZE = 100;                  //number of elements
     long MAXTIME = 1000;            //to change the total duration
 
 
@@ -210,10 +210,10 @@ public class Visualizer extends Application {
         return rectangles;
     }
     public boolean updateHeights(ArrayList<Rectangle> rectangles){
+        index=(index+1);
         if(index >= snaps.size()){
             return false;
         }
-        index=(index+1);
         for (int i = 0; i < snaps.get(index).size(); i++) {
             int height = (snaps.get(index).get(i)*Height/maxHeight);
             if(height>0){
