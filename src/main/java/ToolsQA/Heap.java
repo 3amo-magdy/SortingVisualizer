@@ -49,7 +49,7 @@ public class Heap <T extends Comparable<T>> {
             throw new RuntimeException("Array Elements don't implement Comparable");
         }
         
-        IHeap myHeap = new MaxHeap(arr);
+        IHeap myHeap = new MinHeap(arr);
         myHeap.sort();
         return;
     }
